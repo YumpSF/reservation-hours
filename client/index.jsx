@@ -50,7 +50,7 @@ class App extends Component {
 
   componentDidMount() {
     const restaurantId = window.location.pathname.slice(1);
-    axios.get(`/api/${restaurantId}/reservation`)
+    axios.get(`http://localhost:5882/api/${restaurantId}/reservation`)
       .then((response) => {
         const reservations = response.data.map(reservation => (
           Object.assign({}, reservation, {
@@ -58,12 +58,12 @@ class App extends Component {
             date: moment(reservation.time).format('MM YYYY'),
           })
         ));
-        axios.get(`/api/${restaurantId}/hour`)
+        axios.get(`http://localhost:5882/api/${restaurantId}/hour`)
           .then((result) => {
             const hours = result.data.map(weekday => (
               Object.assign({}, weekday, {
-                opening_hour: weekday.opening_hour.slice(0, 5),
-                closing_hour: weekday.closing_hour.slice(0, 5),
+                opening_hour: weekday.openingHour.slice(0, 5),
+                closing_hour: weekday.closingHour.slice(0, 5),
               })
             ));
             this.setState({
@@ -105,5 +105,5 @@ export default App;
 
 render(
   <App />,
-  document.querySelector('#reservation-container'),
+  document.querySelector('#yump-reservation-hours'),
 );
