@@ -25,6 +25,16 @@
 
 > Local port to run the module is 5882. 
 
+## Endpoints
+
+| Action | Method | Endpoint | Purpose|
+|---|---|---|---|
+| Create | POST | /api/:restaurant_id/reservation | Make New Reservation |
+| Read | GET | /api/:restaurant_id/reservation | Get Reservations |
+| Read | GET | /api/:restaurant_id/hour | Get Hours of Operation |
+| Update | PUT | /api/:restaurant_id/reservation | Update Reservation |
+| Delete | DELETE | /api/:restaurant_id/reservation | Delete Reservation |
+
 ## Requirements
 
 - Node 6.13.0

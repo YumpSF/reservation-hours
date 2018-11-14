@@ -10,7 +10,7 @@
   "scripts": {
     "build": "webpack",
     "start": "nodemon server/app.js",
-    "db": "mysql -u root -p < server/schema.sql",
+    "db": "mysql -u root < server/schema.sql",
     "seed": "node server/database/seed.js",
     "test": "jest --coverage"
   },

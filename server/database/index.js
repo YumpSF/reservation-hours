@@ -3,7 +3,6 @@ const mysql = require('mysql');
 const connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: 'ye',
   database: 'reservation_hour',
 });
 
@@ -38,5 +37,9 @@ connection.getHours = (id, callback) => {
     }
   });
 };
+
+// connection.addReservation = (id, result) => {
+//   const query = `insert into reservation (reservee, time, restaurantd) values()`;
+// };
 
 module.exports = connection;
